@@ -1,3 +1,7 @@
+body{
+	background-size: cover;
+	background-image: url('https://cdn.wallpapersafari.com/52/72/x6PEbZ.jpg')
+}
 .main{
 	width: 800px !important;
 	padding-top: 40%;
@@ -164,10 +168,10 @@
 div[data-player="ManU"] .team-r,
 div[data-player="Liverpool"] .team-l,
 div[data-player="Liverpool"] .kick.btn.-outline {
-    background-color: #5e1208 !important;
+	background-color: #5e1208 !important;
 }
 div[data-player="ManU"] .team-l,
 div[data-player="Liverpool"] .team-r,
 div[data-player="ManU"] .kick.btn.-outline {
-    background-color: #ff2800 !important;
+	background-color: #ff2800 !important;
 }

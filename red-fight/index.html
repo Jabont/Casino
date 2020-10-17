@@ -15,7 +15,9 @@
 		<div class="padding to-center" :data-player="player">
 			<h1 class="t-center cl-white h5">ศึกวันแดงเดือด - {{player}} Turn</h1>
 			<div class="cl-white t-center b7 h7">
-				ManU {{score.ManU}} - Liverpool {{score.Liverpool}}
+				ManU {{score.ManU}} - Li  
+
+				verpool {{score.Liverpool}}
 			</div>
 			<sp class=""></sp>
 			<div class="main">
@@ -69,8 +71,14 @@
 			let t = 0;
 			let shoot = rand(1,6)
 			let jump = rand(1,3)
+			if (c) {
+				theBall.setAttribute('class','ball ball-l shoot1')
+				theGoal.setAttribute('class','man team-r man-goal jump1')
+			}else{
 			theBall.setAttribute('class','ball ball-l shoot'+shoot)
 			theGoal.setAttribute('class','man team-r man-goal jump'+jump)
+				
+			}
 			interval = setInterval(()=>{
 				if (t<10) {
 					ballX = document.querySelector('.ball').offsetLeft
@@ -117,7 +125,15 @@
 				}else{
 					app.player = 'ManU'
 				}
+				c = 0
 			},100)
+		}
+		let c = 0;
+		document.body.onkeyup = function(event){
+			console.log(event.code)
+			if (event.code == 'Space') {
+				c = 1
+			}
 		}
 	</script>
 </body>
