@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class=" bg-lightgreen-7 ">
+<html class=" bg-green-7 ">
 <head>
 	<title>ศึกวันแดงเดือด</title>
 	<meta charset=utf-8>
@@ -10,25 +10,40 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-<body class=" bg-lightgreen-7 ">
+<body class=" bg-green-7 ">
 	<div id="app" class="fullscreen v-middle-flex">
-		<div class="padding to-center">
-			<h1 class="t-center cl-white h5">ศึกวันแดงเดือด</h1>
+		<div class="padding to-center" :data-player="player">
+			<h1 class="t-center cl-white h5">ศึกวันแดงเดือด - {{player}} Turn</h1>
+			<div class="cl-white t-center b7 h7">
+				ManU {{score.ManU}} - Liverpool {{score.Liverpool}}
+			</div>
 			<sp class=""></sp>
 			<div class="main">
 				<div class="man team-l man-goal"></div>
-				<div class="man team-r man-goal jump3"></div>
-				<div class="ball ball-l shoot6"></div>
+				<div class="man team-r man-goal" id="theGoal"></div>
+				<div class="ball ball-l" id="theBall"></div>
 			</div>
 			<sp class=""></sp>
-			<h1 class="t-center h6 cl-white">Start</h1>
+			<div class="t-center">
+				<h1 v-if="!playgame" class="btn  h8 padding-m-vtc cl-white -outline" onclick="newGame()">Start Game</h1>
+				<h1 v-if="!playturn && playgame" class="btn kick h8 -outline padding-m-vtc cl-white" onclick="go()">{{player}} Kick!</h1>
+				<h1 v-if="playturn && playgame" class="btn  h8 -outline padding-m-vtc cl-white" style="border-color: transparent;opacity: .4">Waiting...</h1>
+			</div>
 		</div>
 	</div>
 
 	<script>
 		let app = new Vue({
-			el: '#id',
+			el: '#app',
 			data: {
+				playgame : false,
+				playturn : false,
+				player : 'ManU',
+				score:{
+					ManU : 0,
+					Liverpool : 0,
+				}
+
 
 			},
 			methods: {
@@ -36,24 +51,50 @@
 			}
 		})
 		let interval
+		function newGame(){
+			app.playgame = true
+
+		}
+		function go(){
+			app.playturn = true
+			document.querySelector('.man.team-l').style.transform = 'rotate(80deg)'
+			setTimeout(()=>{
+				document.querySelector('.man.team-l').style.transform = 'rotate(0deg)'
+			},200)
+			setTimeout(()=>{
+				start()
+			},300)
+		}
 		function start(){
 			let t = 0;
+			let shoot = rand(1,6)
+			let jump = rand(1,3)
+			theBall.setAttribute('class','ball ball-l shoot'+shoot)
+			theGoal.setAttribute('class','man team-r man-goal jump'+jump)
 			interval = setInterval(()=>{
 				if (t<10) {
-					console.log(t)
 					ballX = document.querySelector('.ball').offsetLeft
+
 					if (ballX >= 560) {
-						ballY = document.querySelector('.ball').offsetTop+80
-						manY = document.querySelector('.man.team-r').offsetTop
-						if (ballY>=manY) {
-							alert('You Win')
-						}else{
+						let win = 0
+						manTop = document.querySelector('.man.team-r').offsetTop
+						manBottom = document.querySelector('.man.team-r').offsetTop+document.querySelector('.man.team-r').offsetHeight
+						ballTop = document.querySelector('.ball').offsetTop
+						ballBottom = document.querySelector('.ball').offsetTop+80
+						if (ballBottom<manTop || ballTop > manBottom) {
+							win = 1
+						}
+						if (win) {
 							setTimeout(()=>{
-								alert('You Lose')
+								app.score[app.player]++
+								alert(app.player+' Win!!!!')
+								endturn()
 							},300)
+						}else{
+							alert(app.player+' Lose')
+							endturn();
 						}
 						clearInterval(interval)	
-						// if (true) {}
 					}
 				}else{
 					clearInterval(interval)
@@ -61,7 +102,23 @@
 				t++
 			},100)
 		}
-		start()
+		function rand(min, max) {
+			return Math.floor(Math.random() * (max - min  + 1) + min);
+		}
+
+		function endturn(){
+			theBall.setAttribute('class','ball ball-l')
+			theGoal.setAttribute('class','man team-r man-goal')
+			app.playturn = false
+			
+			setTimeout(()=>{
+				if (app.player == 'ManU') {
+					app.player = 'Liverpool'
+				}else{
+					app.player = 'ManU'
+				}
+			},100)
+		}
 	</script>
 </body>
 </html>
