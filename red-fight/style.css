@@ -4,12 +4,12 @@
 	background-color: #0001;
 	margin:auto;
 	position: relative;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 
 .man{
 	width: 10%;
-	height: 60%;
+	height: 40%;
 	background-color: red;
 	position: absolute;
 	bottom: 0%;
@@ -137,7 +137,9 @@
 .man.jump3{
 	animation: jumpC 1s 1;
 }
-
+.man.team-l{
+	transition: bottom .2s,transform .2s;
+}
 @keyframes jumpA{
 	0%{bottom: 0%;}
 	30%{bottom: 20%;}
@@ -156,4 +158,16 @@
 	40%{bottom: 90%;}
 	80%{bottom: 70%;}
 	100%{bottom: 0%;}
+}
+
+
+div[data-player="ManU"] .team-r,
+div[data-player="Liverpool"] .team-l,
+div[data-player="Liverpool"] .kick.btn.-outline {
+    background-color: #5e1208 !important;
+}
+div[data-player="ManU"] .team-l,
+div[data-player="Liverpool"] .team-r,
+div[data-player="ManU"] .kick.btn.-outline {
+    background-color: #ff2800 !important;
 }
