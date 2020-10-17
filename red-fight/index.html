@@ -17,8 +17,8 @@
 			<sp class=""></sp>
 			<div class="main">
 				<div class="man team-l man-goal"></div>
-				<div class="man team-r man-goal"></div>
-				<div class="ball"></div>
+				<div class="man team-r man-goal jump3"></div>
+				<div class="ball ball-l shoot6"></div>
 			</div>
 			<sp class=""></sp>
 			<h1 class="t-center h6 cl-white">Start</h1>
@@ -35,6 +35,33 @@
 
 			}
 		})
+		let interval
+		function start(){
+			let t = 0;
+			interval = setInterval(()=>{
+				if (t<10) {
+					console.log(t)
+					ballX = document.querySelector('.ball').offsetLeft
+					if (ballX >= 560) {
+						ballY = document.querySelector('.ball').offsetTop+80
+						manY = document.querySelector('.man.team-r').offsetTop
+						if (ballY>=manY) {
+							alert('You Win')
+						}else{
+							setTimeout(()=>{
+								alert('You Lose')
+							},300)
+						}
+						clearInterval(interval)	
+						// if (true) {}
+					}
+				}else{
+					clearInterval(interval)
+				}
+				t++
+			},100)
+		}
+		start()
 	</script>
 </body>
 </html>

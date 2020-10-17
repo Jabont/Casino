@@ -1,15 +1,15 @@
 .main{
-	min-width: 600px;
-	max-width: 900px;
+	width: 800px !important;
 	padding-top: 40%;
 	background-color: #0001;
 	margin:auto;
 	position: relative;
+	/*overflow: hidden;*/
 }
 
 .man{
 	width: 10%;
-	padding-top: 35%;
+	height: 60%;
 	background-color: red;
 	position: absolute;
 	bottom: 0%;
@@ -25,6 +25,97 @@
 	left: 20%;
 }
 
+.ball-l.shoot1{
+	animation: shootl-hzt-a 1s 1 forwards,shootl-vtc-a 1s 1 forwards;
+}
+.ball-l.shoot2{
+	animation: shootl-hzt-a 1s 1 forwards,shootl-vtc-b 1s 1 forwards;
+}
+.ball-l.shoot3{
+	animation: shootl-hzt-b 1s 1 forwards,shootl-vtc-c 1s 1 forwards;
+}
+.ball-l.shoot4{
+	animation: shootl-hzt-a 1s 1 forwards,shootl-vtc-c 1s 1 forwards;
+}
+.ball-l.shoot5{
+	animation: shootl-hzt-b 1s 1 forwards,shootl-vtc-b 1s 1 forwards;
+}
+.ball-l.shoot6{
+	animation: shootl-hzt-b 1s 1 forwards,shootl-vtc-a 1s 1 forwards;
+}
+
+@keyframes shootl-hzt-a{
+	from{
+		left: 20%;
+	}
+	to{
+		left: 100%;
+	}
+}
+
+@keyframes shootl-vtc-a{
+	0%{
+		bottom: 0%;
+	}
+	50%{
+		bottom: 80%;
+	}
+	100%{
+		bottom: 30%;
+	}
+}
+
+@keyframes shootl-vtc-b{
+	0%{
+		bottom: 0%;
+	}
+	50%{
+		bottom: 30%;
+	}
+	100%{
+		bottom: 30%;
+	}
+}
+
+@keyframes shootl-hzt-b{
+	0%{
+		left: 20%;
+	}
+	40%{
+		left: 60%;
+	}
+	60%{
+		left: 60%;
+	}
+	60%{
+		left: 60%;
+	}
+	100%{
+		left: 100%;
+	}
+}
+
+@keyframes shootl-vtc-c{
+	0%{
+		bottom: 0%;
+	}
+	20%{
+		bottom: 50%;
+	}
+	40%{
+		bottom: 40%;
+	}
+	60%{
+		bottom: 40%;
+	}
+	80%{
+		bottom: 70%;
+	}
+	100%{
+		bottom: 50%;
+	}
+}
+
 .man.team-r{
 	background-color: blue;
 }
@@ -36,4 +127,33 @@
 }
 .man.team-r.man-goal{
 	right: var(--hzt);
+}
+.man.jump1{
+	animation: jumpA 1s 1;
+}
+.man.jump2{
+	animation: jumpB 1s 1;
+}
+.man.jump3{
+	animation: jumpC 1s 1;
+}
+
+@keyframes jumpA{
+	0%{bottom: 0%;}
+	30%{bottom: 20%;}
+	100%{bottom: 0%;}
+}
+
+@keyframes jumpB{
+	0%{bottom: 0%;}
+	30%{bottom: 40%;}
+	100%{bottom: 0%;}
+}
+@keyframes jumpC
+{
+	0%{bottom: 0%;}
+	20%{bottom: 80%;}
+	40%{bottom: 90%;}
+	80%{bottom: 70%;}
+	100%{bottom: 0%;}
 }
