@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
 
 img {
-  max-width: 100%;
-  height: auto;
+  width: auto;
+  height: 60vh;
   margin:  auto;
 }
 
@@ -10,20 +10,22 @@ img {
   height: 100vh;
 }
 
-.header{
-  color: white;
-}
 body{
-    /* The image used */
-    background-image: url("assets/casino-table.jpg");
-  
-    /* Full height */
-    height: 100%;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  /* The image used */
+  background-image: url("assets/bg.jpg");
 
-    font-family: 'Sansita Swashed', cursive !important;
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: 'Sansita Swashed', cursive !important;
+}
+
+.status-text {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
