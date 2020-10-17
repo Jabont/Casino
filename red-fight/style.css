@@ -1,0 +1,39 @@
+.main{
+	min-width: 600px;
+	max-width: 900px;
+	padding-top: 40%;
+	background-color: #0001;
+	margin:auto;
+	position: relative;
+}
+
+.man{
+	width: 10%;
+	padding-top: 35%;
+	background-color: red;
+	position: absolute;
+	bottom: 0%;
+	transition: bottom .3s;
+}
+.ball{
+	width: 10%;
+	padding-top: 10%;
+	background-color: white;
+	position: absolute;
+	border-radius: 100%;
+	bottom: 0%;
+	left: 20%;
+}
+
+.man.team-r{
+	background-color: blue;
+}
+.man.man-goal{
+	--hzt:10%;
+}
+.man.team-l.man-goal{
+	left: var(--hzt);
+}
+.man.team-r.man-goal{
+	right: var(--hzt);
+}
