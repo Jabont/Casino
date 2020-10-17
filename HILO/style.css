@@ -1,8 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+
 img {
   max-width: 100%;
   height: auto;
+  margin:  auto;
 }
 
 .height{
-  height: 100vh;  
+  height: 100vh;
+}
+
+.header{
+  color: white;
+}
+body{
+    /* The image used */
+    background-image: url("assets/casino-table.jpg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-family: 'Sansita Swashed', cursive !important;
 }
