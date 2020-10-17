@@ -1,3 +1,8 @@
-.card-img {
-  height: 10vh;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.height{
+  height: 100vh;  
 }
