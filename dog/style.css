@@ -1,0 +1,14 @@
+.horse {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+}
+
+.bar {
+    background-color: grey;
+    height: 62px;
+    width: 95vw;
+    margin: 30px;
+    padding-bottom: 30px;
+}

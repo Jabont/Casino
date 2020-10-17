@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="bar">
+    <div id="horse1" class="horse standRight" style="background-color: red"></div>
+</div>
+<div class="bar">
+    <div id="horse2" class="horse standRight" style="background-color: green"></div>
+</div>
+<div class="bar">
+    <div id="horse3" class="horse standRight" style="background-color: yellow"></div>
+</div>
+<div class="bar">
+    <div id="horse4" class="horse standRight" style="background-color: blue"></div>
+</div>
+<div class="bar">
+    <div id="horse5" class="horse standRight" style="background-color: saddlebrown"></div>
+</div>
+<button id="start">Start</button>
+
+<p id="result"></p>
+
+<script>
+    function Horse(id) {
+        this.element = document.getElementById(id);/*HTML element of the horse*/
+        this.speed = Math.random() * 10 + 10; /*Initiate a random speed for each horse, the greater speed, the faster horse. The value is between 10 and 20*/
+        this.x = x; /*Current X*/
+        this.number = parseInt(id.replace(/[\D]/g, '')); /*Number of horse, number will be 1 or 2 or 3 or 4*/
+
+
+        this.move = function () {
+
+            /*Use setTimeout to have the delay in moving the horse*/
+            setTimeout(function () {
+                var horse = this;/*Assign horse to this object*/
+                horse.x++
+                horse.element.style.left = horse.x + 'vw';
+                if (horse.x === 95) horse.arrive()
+                else horse.move()
+            }, 1000/this.speed);
+        }
+        this.run = function(){
+            this.move();
+        }
+        this.arrive = function(){
+
+            /*Show the result*/
+            var tds = document.querySelectorAll('#results .result');//Get all table cell to display the result
+            //results.length is the current arrive position
+            tds[results.length].className = 'result horse'+this.number;//The class of result look like: result horse1...
+
+            //Push the horse number to results array, according the the results array, we know the order of race results
+            results.push(this.number);
+
+            //Win horse
+            if (results.length == 1){
+                //If win horse is the bet horse, then add the fund
+                if (this.number == bethorse){
+                    funds += amount;
+                }else{
+                    funds -= amount;
+                }
+                document.getElementById('funds').innerText = funds;
+            }else if (results.length == 4){
+                //All horse arrived, enable again the Start Button
+                document.getElementById('start').disabled = false;
+            }
+        }
+    }
+</script>
+</body>
+</html>
