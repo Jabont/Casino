@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas#canvas {
+  display: block;
+  background: #000;
+}
+
+div.controller {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1.6rem
+}
