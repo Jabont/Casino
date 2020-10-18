@@ -1,7 +1,11 @@
-const data = [
-    {data:"Test0",img:"circle-cropped (0).png"},
-    {data:"Test1",img:"circle-cropped (1).png"},
-    {data:"Test2",img:"circle-cropped (2).png"},
-    {data:"Test3",img:"circle-cropped (3).png"},
-    {data:"Test4",img:"circle-cropped (4).png"},
+const ssr = [
+    {text:"SSR1",img:"ssr1.png"},
+    {text:"SSR2",img:"ssr2.png"},
+]
+const normal = [
+    {text:"N1",img:"normal1.png"},
+    {text:"N2",img:"normal2.png"},
+    {text:"N3",img:"normal3.png"},
+    {text:"N4",img:"normal4.png"},
+    {text:"N5",img:"normal5.png"},
 ] 
