@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3card</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="shuffle()">
+    <div class="d-flex justify-content-around w-100 pt-5">
+      <div>
+        <button onclick="resetAll()" class="btn btn-primary p-3">
+          เริ่มใหม่
+        </button>
+      </div>
+      <!-- <div class="col-4"> -->
+      <!-- <button onclick="shuffle()">สุ่ม</button> -->
+      <!-- </div> -->
+      <div>
+        <button onclick="openAll()" class="btn btn-warning p-3">
+          เปิดทั้งหมด
+        </button>
+      </div>
+    </div>
+    <div
+      class="container d-flex justify-content-center align-items-center"
+      style="flex-direction: row"
+    >
+      <div class="row">
+        <div id="card1" onclick="handleClick('card1-inner')" class="flip-card">
+          <div id="card1-inner" class="flip-card-inner my-auto">
+            <div class="flip-card-front d-flex align-items-center">
+              <img src="logo.png" alt="Avatar" class="w-100" />
+            </div>
+            <div class="flip-card-back text-center">
+              <h3 id="result1" class="my-auto">...</h3>
+            </div>
+          </div>
+        </div>
+        <div id="card1" onclick="handleClick('card2-inner')" class="flip-card">
+          <div id="card2-inner" class="flip-card-inner">
+            <div class="flip-card-front d-flex align-items-center">
+              <img src="logo.png" alt="Avatar" class="w-100" />
+            </div>
+            <div class="flip-card-back text-center">
+              <h3 id="result2" class="my-auto h-100">...</h3>
+            </div>
+          </div>
+        </div>
+
+        <div id="card1" onclick="handleClick('card3-inner')" class="flip-card">
+          <div id="card3-inner" class="flip-card-inner">
+            <div class="flip-card-front d-flex align-items-center">
+              <img src="logo.png" alt="Avatar" class="w-100" />
+            </div>
+            <div class="flip-card-back text-center">
+              <h3 id="result3" class="my-auto">...</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
