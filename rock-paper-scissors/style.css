@@ -1,0 +1,135 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: linear-gradient(to top left, lightblue, #00bf8f);
+}
+
+#game {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#sidebar {
+    position: relative;
+    right: 0;
+    transition: width .3s;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 0 0 20px #0006;
+}
+
+#sidebarToggler {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: white;
+    width: 80px;
+    height: 75px;
+    font-size: 2em;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    z-index: 1;
+}
+
+#sidebarToggler:hover {
+    cursor: pointer;
+    filter: brightness(95%);
+}
+
+#choice {
+    width: 75%;
+    height: 20%;
+    border-radius: 20px;
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    background-color: black;
+    box-shadow: 0 0 50px #000a;
+}
+
+.btn {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: 'Kanit';
+    font-size: 4em;
+    font-weight: 800;
+    background-color: black;
+    transition: all .1s linear;
+    outline: none;
+}
+
+.btn:hover {
+    filter: brightness(85%);
+    background-color: white;
+    scale: 1.2;
+    cursor: pointer;
+}
+
+#rock {
+    border-radius: 20px 0px 0px 20px;
+}
+
+#scissors {
+    border-radius: 0px 20px 20px 0px;
+}
+
+#result {
+    font-size: 6em;
+    margin: 0;
+}
+
+#loader {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    opacity: 0;
+    transition: opacity .1s;
+}
+
+.table {
+    width: 100%;
+    font-size: 4em;
+    text-align: center;
+    height: 50%;
+}
+
+.sidebar-table {
+    width: 90%;
+    text-align: center;
+}
+
+.sidebar-table th {
+    font-size: 1.5em;
+}
+
+.sidebar-table td {
+    font-size: 1.5em;
+}

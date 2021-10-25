@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;800&display=swap" rel="stylesheet" />
+    <script src="app.js"></script>
+    <title>เป่ายิ้งฉุบ</title>
+    <link rel="shortcut icon" href="asset/favicon.png" type="image/x-png">
+</head>
+<body onload="bootUp(500)">
+    <div id="root">
+        <div id="game">
+            <p id="result"></p>
+            <table class="table">
+                <thead>
+                    <th class="table-header">You</th>
+                    <th class="table-header">Bob</th>
+                </thead>
+                <tbody>
+                    <td class="table-cell">
+                        <p id="player"></p>
+                    </td>
+                    <td class="table-cell">
+                        <p id="enemy"></p>
+                    </td>
+                </tbody>
+            </table>
+            <div id="choice">
+                <button class="btn" tabindex="-1" id="rock" onclick="play(this.id)">🔨</button>
+                <button class="btn" tabindex="-1" id="paper" onclick="play(this.id)">📃</button>
+                <button class="btn" tabindex="-1" id="scissors" onclick="play(this.id)">✂️</button>
+            </div>
+            <div id="loader">
+                <img src="asset/loader.svg" alt="loader">
+            </div>
+            <button id="sidebarToggler" onclick="toggleSidebar()">✨</button>
+        </div>
+        <div id="sidebar" class="close">
+            <table class="sidebar-table">
+                <thead>
+                    <th>Player</th>
+                    <th>Enemy</th>
+                    <th>Result</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🔨</td>
+                        <td>✂️</td>
+                        <td>WIN</td>
+                    </tr>
+                    <tr>
+                        <td>📃</td>
+                        <td>🔨</td>
+                        <td>WIN</td>
+                    </tr>
+                    <tr>
+                        <td>✂️</td>
+                        <td>📃</td>
+                        <td>WIN</td>
+                    </tr>
+                    <tr>
+                        <td>🔨</td>
+                        <td>🔨</td>
+                        <td>DRAW</td>
+                    </tr>
+                    <tr>
+                        <td>📃</td>
+                        <td>📃</td>
+                        <td>DRAW</td>
+                    </tr>
+                    <tr>
+                        <td>✂️</td>
+                        <td>✂️</td>
+                        <td>DRAW</td>
+                    </tr>
+                    <tr>
+                        <td>🔨</td>
+                        <td>📃</td>
+                        <td>LOSE</td>
+                    </tr>
+                    <tr>
+                        <td>📃</td>
+                        <td>✂️</td>
+                        <td>LOSE</td>
+                    </tr>
+                    <tr>
+                        <td>✂️</td>
+                        <td>🔨</td>
+                        <td>LOSE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
